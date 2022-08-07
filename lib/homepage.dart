@@ -31,8 +31,7 @@ class HomePage extends StatelessWidget {
               icon: Icon(Icons.logout),
               onPressed: () {
                 FirebaseAuth.instance.signOut().then((value) {
-                  Navigator.pop(context);
-                  Navigator.pushNamed(context, '/landingpage');
+                  Navigator.pushReplacementNamed(context,'/landingpage');
                 }).catchError((e) {
                   print(e);
                 });
